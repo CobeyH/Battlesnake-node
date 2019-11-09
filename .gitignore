@@ -1,1 +1,6 @@
+# mode modules are generated when running `npm install` and shouldn't 
 node_modules
+# dist contains transpiled javascript files that are generated from typescript
+dist
+# .env can contain secret information that shouldn't be uploaded to git
+.env
