@@ -35,3 +35,9 @@ function isSafe(point: Point, data: any): boolean {
   }
   return true;
 }
+
+function distanceToPoint(point1: Point, point2: Point): number {
+  let xdiff = Math.abs(point1[0] - point2[0]);
+  let ydiff = Math.abs(point1[1] - point2[1]);
+  return xdiff + ydiff;
+}
