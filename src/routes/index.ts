@@ -18,7 +18,7 @@ router.post('/start', (req: StartRequest, res: StartResponse): StartResponse => 
 
   // Response data
   const responseData: StartResponseData = {
-    color: "#710bff",
+    color: process.env.COLOUR || "#710bff",
     name: "Type Snake",
     head_url: "http://www.placecage.com/c/200/200", // optional, but encouraged!
     taunt: requestData.game_id // optional, but encouraged!
