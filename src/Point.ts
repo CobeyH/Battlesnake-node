@@ -1,20 +1,20 @@
 import { Point } from "./types/battlesnake";
 
-function issnake(point: Point, data: any): boolean {
+function isSnake(point: Point, data: any): boolean {
   if (data.snakes.contains(point)) {
     return true;
   }
   return false;
 }
 
-function isfood(point: Point, data: any): boolean {
+function isFood(point: Point, data: any): boolean {
   if (data.food.contains(point)) {
     return true;
   }
   return false;
 }
 
-function iswall(point: Point, data: any): boolean {
+function isWall(point: Point, data: any): boolean {
   if (
     point[0] < 0 ||
     point[0] >= data.board.width ||
@@ -24,4 +24,14 @@ function iswall(point: Point, data: any): boolean {
     return true;
   }
   return false;
+}
+
+function isSafe(point: Point, data: any): boolean {
+  if (isWall(point, data)) {
+    return false;
+  }
+  if (isSnake(point, data)) {
+    return false;
+  }
+  return true;
 }
